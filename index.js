@@ -12,13 +12,6 @@ const PUBLIC_PATH = path.resolve(__dirname, "public");
 
 app.use(express.static(PUBLIC_PATH));
 
-io.on("connection", (client) => {
-  console.log("Cliente conectado");
-  client.on("disconnect", () => {
-    console.log("Cliente desconectado");
-  });
-});
-
 server.listen(PORT, (err) => {
   if (err) {
     throw new Error("Ocurrio un error");
